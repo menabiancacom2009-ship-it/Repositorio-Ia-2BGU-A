@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Repositorio IA - 2 BGU</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <span class="logo-icon">🤖</span>
+                <h1>Repositorio IA 2 BGU</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#archivos" class="nav-link">Archivos</a>
+                <a href="#estadisticas" class="nav-link">Estadísticas</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>Repositorio de Inteligencia Artificial</h2>
+            <p>Recursos educativos de IA para estudiantes de 2 BGU</p>
+            <p class="subtitle">Accede a todos los materiales disponibles en este repositorio</p>
+            <button class="btn btn-primary" onclick="document.getElementById('archivos').scrollIntoView({behavior: 'smooth'})">Explorar Archivos</button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Sección de Archivos -->
+        <section id="archivos" class="files-section">
+            <h2 class="section-title">📁 Archivos del Repositorio</h2>
+            <p class="section-subtitle">Haz clic en cualquier archivo para acceder o descargar</p>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="pdf">📄 PDF</button>
+                <button class="filter-btn" data-filter="js">⚙️ JavaScript</button>
+                <button class="filter-btn" data-filter="otros">🔧 Otros</button>
+            </div>
+
+            <div class="files-grid" id="filesGrid">
+                <!-- Los archivos se cargarán dinámicamente aquí -->
+            </div>
+        </section>
+
+        <!-- Sección de Estadísticas -->
+        <section id="estadisticas" class="stats-section">
+            <h2 class="section-title">📊 Estadísticas del Repositorio</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📁</div>
+                    <h3>Archivos Totales</h3>
+                    <p class="stat-number" id="totalFiles">0</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💾</div>
+                    <h3>Tamaño Total</h3>
+                    <p class="stat-number" id="totalSize">0 MB</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <h3>Calificación Promedio</h3>
+                    <p class="stat-number" id="avgRating">0.0</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <h3>Evaluaciones</h3>
+                    <p class="stat-number" id="totalRatings">0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="contacto-section">
+            <h2 class="section-title">📧 Contacto</h2>
+            <div class="contacto-content">
+                <p>¿Preguntas o sugerencias? Contáctanos a través del repositorio.</p>
+                <a href="https://github.com/menabiancacom2009-ship-it/Repositorio-Ia-2BGU-A" target="_blank" class="btn btn-primary">
+                    Ir al Repositorio
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para detalles de archivo -->
+    <div id="fileModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div class="modal-body">
+                <p><strong>Tamaño:</strong> <span id="modalSize"></span></p>
+                <p><strong>Tipo:</strong> <span id="modalType"></span></p>
+                <p><strong>Enlace:</strong> <a id="modalLink" target="_blank">Ver en GitHub</a></p>
+            </div>
+            <div class="rating-section">
+                <h3>Valoración de este archivo</h3>
+                <div class="rating-stars" id="ratingStars">
+                    <span class="star" data-value="1">⭐</span>
+                    <span class="star" data-value="2">⭐</span>
+                    <span class="star" data-value="3">⭐</span>
+                    <span class="star" data-value="4">⭐</span>
+                    <span class="star" data-value="5">⭐</span>
+                </div>
+                <p id="ratingText">Selecciona una calificación</p>
+                <input type="text" id="ratingComment" placeholder="Dejar un comentario (opcional)">
+                <button class="btn btn-secondary" onclick="submitRating()">Guardar Valoración</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Repositorio IA 2 BGU | Desarrollado para educación en Inteligencia Artificial</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
